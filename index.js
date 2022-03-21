@@ -35,3 +35,6 @@ const newBlock = {
 
 
 console.log(generateGenesisBlock())
+
+// https://dev.to/educationecosystem/how-to-create-your-own-cryptocurrency-blockchain-in-nodejs-274c
+// https://itnext.io/writing-a-blockchain-in-node-js-cd3e903226cf
