@@ -19,7 +19,29 @@ const generateGenesisBlock = () => {
     }
 }
 
+const checkDifficulty = (difficulty, hash) => {
+    return hash.substr(0, difficulty) === "0".repeat(difficulty)
+}
 
+const nextNonce = (block) => {
+    return updateHash({ ...block, nonce: block.nonce + 1 })
+}
+
+const updateHash = (block) => {
+    return { ...block, hash: calculateHash(block) }
+}
+
+const addBlock = (chain, data) => {
+    const { hash: previousHash } = chain[chain.length - 1]
+    const block = {
+        timestamp: + new Date(),
+        data,
+        previousHash,
+        nonce: 0
+    }
+    const newBlock = mineBlock(4, block)
+    return chain.concat(newBlock)
+}
 
 const newBlock = {
     data: {
