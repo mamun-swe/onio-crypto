@@ -33,4 +33,5 @@ const newBlock = {
 }
 
 
+
 console.log(generateGenesisBlock())
